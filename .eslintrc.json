@@ -17,7 +17,5 @@
     "no-empty-function": "off",
     "no-unused-vars": "off",
 		"below": "off"
-		// ,
-    // "import/no-extraneous-dependencies": "off"
   }
 }
