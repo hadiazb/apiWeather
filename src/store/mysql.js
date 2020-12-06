@@ -6,6 +6,7 @@ const sequelize = new Sequelize(
   config.database.dbUser,
   config.database.dbPassword,
   {
+    port: config.database.dbPort,
     host: config.database.dbHost,
     dialect: 'mysql',
     pool: {

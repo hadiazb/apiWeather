@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import config from './config/index';
 import errors from './network/errors';
 import sequelize from './store/mysql';
+import router from './network/routes';
 
 export default class Server {
   constructor() {
@@ -27,6 +28,7 @@ export default class Server {
     this.app.use(express.json());
     this.app.use(cors());
     this.app.use(helmet());
+    router(this.app);
     this.app.use(errors);
   }
 
@@ -34,7 +36,7 @@ export default class Server {
     this.app.listen(this.port, () => console.log(`Listening on http://localhost:${this.port}`));
 
     sequelize
-      .sync({ force: false })
+      .sync({ force: true })
       .then(() => {
         console.log('Data base is connect!!!');
       })

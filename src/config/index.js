@@ -17,6 +17,6 @@ export default {
     dbHost: process.env.DB_HOST,
   },
   auth: {
-    secret: process.env.SECRET,
+    secret: process.env.AUTH_JWT_SECRET,
   },
 };

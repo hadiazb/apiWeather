@@ -20,23 +20,23 @@ User.init(
     },
     phone: {
       type: DataTypes.STRING,
-      defaultValue: '00 0 000 000 0000',
+      defaultValue: null,
     },
     country: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: null,
     },
     state: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: null,
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: null,
     },
     birthday: {
       type: DataTypes.DATE,
-      allowNull: false,
+      defaultValue: null,
     },
   },
   { sequelize, modelName: 'user' },
