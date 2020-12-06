@@ -36,7 +36,7 @@ export default class Server {
     this.app.listen(this.port, () => console.log(`Listening on http://localhost:${this.port}`));
 
     sequelize
-      .sync({ force: true })
+      .sync({ force: false })
       .then(() => {
         console.log('Data base is connect!!!');
       })

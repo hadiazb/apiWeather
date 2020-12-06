@@ -3,6 +3,7 @@ import express from 'express';
 import controller from './controller';
 import response from '../../../network/response';
 import auth from '../auth/controller';
+import secure from './secure';
 
 const router = express.Router();
 
@@ -95,7 +96,7 @@ const remove = (req, res, next) => {
 router.get('/', list);
 router.get('/:id', get);
 router.post('/signup', insert);
-router.put('/:id', update);
-router.delete('/:id', remove);
+router.put('/:id', secure('update'), update);
+router.delete('/:id', secure('remove'), remove);
 
 export default router;
