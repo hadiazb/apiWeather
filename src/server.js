@@ -4,6 +4,7 @@ import helmet from 'helmet';
 
 import config from './config/index';
 import errors from './network/errors';
+import sequelize from './store/mysql';
 
 export default class Server {
   constructor() {
@@ -31,5 +32,14 @@ export default class Server {
 
   runServer() {
     this.app.listen(this.port, () => console.log(`Listening on http://localhost:${this.port}`));
+
+    sequelize
+      .sync({ force: false })
+      .then(() => {
+        console.log('Data base is connect!!!');
+      })
+      .catch((error) => {
+        console.log('There is a error:', error);
+      });
   }
 }
