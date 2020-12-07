@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/app",
+    "dev": "DEBUG=app:* nodemon --exec babel-node src/app",
     "lint": "eslint '*/**/*.js' --quiet --fix"
   },
   "keywords": [],
