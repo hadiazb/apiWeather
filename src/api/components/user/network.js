@@ -43,7 +43,7 @@ const insert = (req, res, next) => {
 
 const update = (req, res, next) => {
   controller
-    .update(req.body, req.params.id)
+    .update(req.body, req.body.id)
     .then((user) => {
       response.success(
         req,
@@ -56,7 +56,7 @@ const update = (req, res, next) => {
     .catch(next);
 
   auth
-    .update(req.body, req.params.id)
+    .update(req.body, req.body.id)
     .then((authData) => {
       response.success(req, res, authData, 200, 'User Update Ok');
     })
@@ -96,7 +96,7 @@ const remove = (req, res, next) => {
 router.get('/', list);
 router.get('/:id', get);
 router.post('/signup', insert);
-router.put('/:id', secure('update'), update);
+router.put('/', secure('update'), update);
 router.delete('/:id', secure('remove'), remove);
 
 export default router;
