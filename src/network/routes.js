@@ -3,9 +3,9 @@ import auth from '../api/components/auth/network';
 import apiIndex from '../api/apiIndex';
 
 const router = (server) => {
-  server.use('/users', user);
-  server.use('/users', auth);
-  server.use('/', apiIndex);
+  server.use('/api/users', user);
+  server.use('/api/users', auth);
+  server.use('/api', apiIndex);
 };
 
 export default router;
