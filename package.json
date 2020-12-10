@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "DEBUG=app:* nodemon --exec babel-node src/index",
-    "start": "node index.js",
+    "dev": "DEBUG=app:* nodemon --exec babel-node src/app",
+    "start": "node src/app.js",
     "lint": "eslint '*/**/*.js' --quiet --fix"
   },
   "keywords": [],
