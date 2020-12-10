@@ -9,13 +9,13 @@ let message = [];
 if (config.app.env === 'development') {
   message = [
     {
-      user: `${config.app.serverHostDevelopment}:${config.app.port}/users`,
+      user: `${config.app.serverHostDevelopment}:${config.app.port}/api/users`,
     },
   ];
 } else {
   message = [
     {
-      user: `${config.app.serverHostProduction}/users`,
+      user: `${config.app.serverHostProduction}/api/users`,
     },
   ];
 }

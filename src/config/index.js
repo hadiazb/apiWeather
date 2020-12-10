@@ -4,7 +4,7 @@ dotenv.config();
 
 export default {
   app: {
-    port: process.env.PORT,
+    port: process.env.PORT || 8000,
     env: process.env.NODE_ENV,
     serverHostDevelopment: process.env.SERVER_HOST_DEVELOPMENT,
     serverHostProduction: process.env.SERVER_HOST_PRODUCTION,
