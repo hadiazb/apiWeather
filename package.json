@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "10.19.0"
+    "node": "14.x"
   },
   "scripts": {
     "dev": "DEBUG=app:* nodemon --exec babel-node src/server",
-    "start": "node src/server",
+    "start": "node --exec babel-node ./src/server",
     "lint": "eslint '*/**/*.js' --quiet --fix"
   },
   "keywords": [],
